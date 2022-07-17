@@ -48,7 +48,7 @@ app.listen(3335, async () => {
   console.log("query service listening on port 3335");
 
   try {
-    const res = await axios.get("http://localhost:3332/events");
+    const res = await axios.get("http://event-bus-srv:3332/events");
 
     for (const event of res.data) {
       console.log("Processing event of type " + event.type);
