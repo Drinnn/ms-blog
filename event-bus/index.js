@@ -12,17 +12,17 @@ app.post("/events", (req, res) => {
   events.push(event);
 
   axios
-    .post("http://localhost:3333/events", event)
+    .post("http://posts-clusterip-srv:3333/events", event)
     .catch((err) => console.log(err));
-  axios
-    .post("http://localhost:3334/events", event)
-    .catch((err) => console.log(err));
-  axios
-    .post("http://localhost:3335/events", event)
-    .catch((err) => console.log(err));
-  axios
-    .post("http://localhost:3336/events", event)
-    .catch((err) => console.log(err));
+  // axios
+  //   .post("http://localhost:3334/events", event)
+  //   .catch((err) => console.log(err));
+  // axios
+  //   .post("http://localhost:3335/events", event)
+  //   .catch((err) => console.log(err));
+  // axios
+  //   .post("http://localhost:3336/events", event)
+  //   .catch((err) => console.log(err));
 
   res.status(200).json({ status: "ok" });
 });
